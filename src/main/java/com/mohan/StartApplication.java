@@ -1,4 +1,4 @@
-package com.abhishek;
+package com.mohan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +14,7 @@ public class StartApplication {
     public String index(final Model model) {
         model.addAttribute("title", "I have successfuly built a sprint boot application using Maven");
         model.addAttribute("msg", "This application is deployed on to Kubernetes using Argo CD");
-        model.addAttribute("msg", "VERSION_2: ->>> I am modifying this to test the WEBHOOK from GITHUB to JENKINS");
+        model.addAttribute("msg", "Github webhook is enabled i surce repo to trigger Jenkins Pipeline automatically");
         
         return "index";
     }
