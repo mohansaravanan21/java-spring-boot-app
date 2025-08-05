@@ -14,7 +14,7 @@ public class StartApplication {
     public String index(final Model model) {
         model.addAttribute("title", "I have successfuly built a sprint boot application using Maven");
         model.addAttribute("msg", "This application is deployed on to Kubernetes using Argo CD");
-        model.addAttribute("msg", "Github webhook is enabled for source repo to trigger Jenkins Pipeline automatically!!!!");
+        model.addAttribute("msg", "Github webhook is enabled for source repo to trigger Jenkins Pipeline automatically!!!! - Modified_Text");
         
         return "index";
     }
