@@ -6,11 +6,6 @@ pipeline {
     }
   }
   stages {
-    stage('Checkout') {
-      steps {
-        sh 'echo passed'
-      }
-    }
     stage('Build and Test') {
       steps {
         // build the project and create a JAR file
