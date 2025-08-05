@@ -9,7 +9,7 @@ pipeline {
     stage('Build and Test') {
       steps {
         // build the project and create a JAR file
-        sh 'cd java-spring-boot-app && mvn clean package'
+        sh 'mvn clean package'
       }
     }
     stage('Static Code Analysis') {
@@ -18,7 +18,7 @@ pipeline {
       }
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
-          sh 'cd java-spring-boot-app && mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+          sh 'mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
         }
       }
     }
@@ -28,7 +28,6 @@ pipeline {
             script{
                 sh '''
                 echo 'Buid Docker Image'
-                cd java-spring-boot-app
                 docker build -t mohansaravanan212/java-web-ultimate-cicd:${BUILD_NUMBER} .
                 '''
             }
