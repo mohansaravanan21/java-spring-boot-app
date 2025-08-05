@@ -62,8 +62,8 @@ pipeline {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s|image: mohansaravanan212/java-web-ultimate-cicd:.*|image: mohansaravanan212/java-web-ultimate-cicd:${BUILD_NUMBER}|" deployment.yml
-                    git add deployment.yml
+                    sed -i "s|image: mohansaravanan212/java-web-ultimate-cicd:.*|image: mohansaravanan212/java-web-ultimate-cicd:${BUILD_NUMBER}|" manifests/deployment.yml
+                    git add manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
