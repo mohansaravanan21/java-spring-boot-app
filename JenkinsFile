@@ -50,6 +50,8 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo Checkout_Manifests_Repo'
+        sh 'mkdir app-manifests'
+        sh 'cd app-manifests'
         git branch: 'main', url: 'https://github.com/mohansaravanan21/springboot-app-manifests.git'
       }
     }
@@ -64,8 +66,8 @@ pipeline {
                     git config user.email "mohansekaran21@gmail.com"
                     git config user.name "mohansaravanan21"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s|image: mohansaravanan212/java-web-ultimate-cicd:.*|image: mohansaravanan212/java-web-ultimate-cicd:${BUILD_NUMBER}|" springboot-app-manifests/deployment.yml
-                    git add springboot-app-manifests/deployment.yml
+                    sed -i "s|image: mohansaravanan212/java-web-ultimate-cicd:.*|image: mohansaravanan212/java-web-ultimate-cicd:${BUILD_NUMBER}|" app-manifests/deployment.yml
+                    git add app-manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
