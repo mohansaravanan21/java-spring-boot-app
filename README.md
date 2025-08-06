@@ -17,8 +17,8 @@ This project is a sample Java Spring Boot web application demonstrating a comple
 ```mermaid
 flowchart TD
     A[Developer Pushes Code to GitHub] --> B[Jenkins Pipeline Triggered]
-    B --> C[Build & Test (Maven)]
-    C --> D[Static Code Analysis (SonarQube)]
+    B --> C[Build and Test]
+    C --> D[Static Code Analysis]
     D --> E[Build Docker Image]
     E --> F[Push Image to Docker Hub]
     F --> G[Update K8s Manifest in GitOps Repo]
