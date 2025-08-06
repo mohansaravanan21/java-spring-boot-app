@@ -26,6 +26,8 @@ flowchart TD
     H --> I[Argo CD Deploys to Kubernetes]
     I --> J[Application Running in K8s]
 ```
+<img width="1321" height="659" alt="cicd-archi-diagram" src="https://github.com/user-attachments/assets/ab000c36-846b-41fa-961c-2cbb0395957a" />
+
 
 ## Project Structure
 ```
