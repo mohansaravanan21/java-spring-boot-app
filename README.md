@@ -81,7 +81,9 @@ The Jenkins pipeline performs the following stages:
 - Set up a webhook in your source repository to trigger the Jenkins pipeline.
 - The pipeline will automatically build, test, analyze, build/push Docker image, and update the Kubernetes deployment manifest.
 
+
 ## GitOps with Argo CD
+- Argo CD is installed via [OperatorHub.io](https://operatorhub.io/operator/argocd-operator).
 - The manifests repository is monitored by Argo CD.
 - When the deployment manifest is updated with a new image tag, Argo CD automatically deploys the new version to Kubernetes.
 
