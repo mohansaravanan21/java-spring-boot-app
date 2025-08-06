@@ -1,4 +1,9 @@
+
 # Java Spring Boot CI/CD GitOps Project
+
+**Source Code Repo:** [java-spring-boot-app](https://github.com/mohansaravanan21/java-spring-boot-app)
+
+**Kubernetes Manifests Repo:** [springboot-app-manifests](https://github.com/mohansaravanan21/springboot-app-manifests)
 
 This project is a sample Java Spring Boot web application demonstrating a complete CI/CD pipeline with GitOps practices. It includes automated build, test, static code analysis, Docker image creation, and deployment to Kubernetes using Argo CD, all orchestrated via Jenkins.
 
