@@ -41,7 +41,7 @@ flowchart TD
 ├── pom.xml                   # Maven project file
 ├── src/
 │   └── main/
-│       ├── java/com/abhishek/StartApplication.java  # Main Spring Boot app
+│       ├── java/com/mohan/StartApplication.java  # Main Spring Boot app
 │       └── resources/
 │           ├── application.properties
 │           ├── static/
